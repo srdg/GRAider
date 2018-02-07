@@ -5,6 +5,7 @@ import os, sys
 import urllib.request
 import requests
 
+
 class downloadGradeCard():
 
 	def __init__(self,master):
@@ -58,6 +59,7 @@ class downloadGradeCard():
 		_url = "http://jgec.ac.in/php/coe/results/"+self.sem.get()[3]+"/"+self.stream.get()+"_"+self.sem.get()+"_"
 		preset = self.year.get()[-2:]
 		roll = str(int(preset) -1*(self.typeofstudent.get()))+"10110"+endset[self.stream.get()]
+
 		# create custom directory if not available
 		if not os.path.exists(self.stream.get()+"_"+self.sem.get()+"_Results Stored Here"):
 			os.makedirs(self.stream.get()+"_"+self.sem.get()+"_Results Stored Here")
