@@ -5,4 +5,4 @@ python:
 
 install: pip install requests
 
-script: python3 app.py
+script: xvfb-run python3 app.py
