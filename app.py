@@ -55,7 +55,7 @@ class downloadGradeCard():
 		Retrieves the file using urlretrieve() [might be deprecated]
 		Saves and stores the retrieved file to a local system folder
 		'''
-		endset = {'CSE': '40', 'ECE': '60', 'IT': '50', 'CE':'10','EE':'20','ME':'30'}
+		endset = {'CSE': '40', 'ECE': '50', 'IT': '60', 'CE':'10','EE':'20','ME':'30'}
 		_url = "http://jgec.ac.in/php/coe/results/"+self.sem.get()[3]+"/"+self.stream.get()+"_"+self.sem.get()+"_"
 		preset = self.year.get()[-2:]
 		roll = str(int(preset) -1*(self.typeofstudent.get()))+"10110"+endset[self.stream.get()]
