@@ -13,7 +13,7 @@ class downloadGradeCard():
 		initializes and sets up UI requires the user to mention 
 		sem [SEM1 by default] and stream [CSE by default]
 		'''
-		master.geometry("400x300")
+		master.geometry("300x300")
 		master.title("GrAider")
 
 		Label(master,text="\n\n").grid(row=1, column=2,sticky=W)
@@ -49,6 +49,12 @@ class downloadGradeCard():
 		download.configure(font=font_obj)
 		download.grid(row = 6, column = 4, sticky = E)
 
+		quit = Button(master, text="Quit", command = self.quitWindow)
+		font_obj = font.Font(download,download.cget("font"))
+		font_obj.configure(underline = True)
+		quit.configure(font=font_obj)
+		quit.grid(row = 7, column = 4, sticky = W)
+
 	def startDownload(self):
 		'''
 		Generates the url by parsing arguments entered as inputs
@@ -80,9 +86,18 @@ class downloadGradeCard():
 					roll = preset+"10110"+endset[self.stream.get()]
 				else:
 					roll = str(int(preset)+1)+"10110"+endset[self.stream.get()]
-		
+
+
+	def quitWindow(self):
+		'''
+		Quits the window
+		'''
+		global root
+		root.destroy()
+
+
+root = Tk()
 def main():
-	root = Tk()
 	downloaderObject = downloadGradeCard(root)
 	root.mainloop()
 
