@@ -1,4 +1,8 @@
-from tkinter import *
+try:
+	from tkinter import *
+except:
+	import subprocess
+	subprocess.call(['pip3','install','tkinter'])
 from tkinter import font
 import shutil
 import os, sys
